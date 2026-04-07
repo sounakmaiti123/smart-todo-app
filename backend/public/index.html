@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskFlow</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- 🔥 NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <div class="icon">◎</div>
+      <h2>TaskFlow</h2>
+    </div>
+
+    <div class="right-section">
+      <span id="date"></span>
+      <button class="btn" onclick="openLogin()">Login</button>
+      <button class="btn signup" onclick="openSignup()">Sign Up</button>
+    </div>
+  </header>
+
+ <!-- 🔐 LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h2>Login</h2>
+
+    <input id="loginEmail" placeholder="Email">
+    <input id="loginPassword" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p class="switch">
+      Don't have an account?
+      <span onclick="switchToSignup()">Sign Up</span>
+    </p>
+  </div>
+</div>
+
+<!-- 🆕 SIGNUP MODAL -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <h2>Sign Up</h2>
+
+    <input id="signupEmail" placeholder="Email">
+    <input id="signupPassword" type="password" placeholder="Password">
+
+    <button onclick="signup()">Create Account</button>
+
+    <p class="switch">
+      Already have an account?
+      <span onclick="switchToLogin()">Login</span>
+    </p>
+  </div>
+</div>
+
+  <!-- 📊 CARDS -->
+  <div class="cards">
+    <div class="card">
+      <p>Today's Tasks</p>
+      <h1 id="totalTasks">0</h1>
+    </div>
+
+    <div class="card">
+      <p>Completed</p>
+      <h1 id="completedTasks">0</h1>
+    </div>
+
+    <div class="card">
+      <p>Accuracy</p>
+      <h1 id="accuracy">0%</h1>
+    </div>
+  </div>
+
+  <!-- 📈 GRAPH BOX -->
+  <div class="graph-box">
+    No data yet. Start adding tasks to see your performance!
+  </div>
+
+  <!-- ✏️ INPUT -->
+  <h3 class="section-title">Today's Work</h3>
+
+ <div class="input-section">
+  <input id="taskInput" placeholder="Task name">
+  <input id="plannedDays" type="number" placeholder="Days">
+  <button onclick="addTask()">+ Add</button>
+</div>
+
+  <!-- 📋 TASK LIST -->
+  <div id="taskList"></div>
+
+  <p class="empty">No tasks yet today. What are you working on?</p>
+
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-left">
+      <div class="logo-icon">◎</div>
+      <h2>TaskFlow</h2>
+    </div>
+
+    <div class="footer-center">
+      <p class="tagline">Track. Improve. Achieve.</p>
+
+      <!-- 🔥 SOCIAL ICONS -->
+      <div class="social-icons">
+        <a href="https://github.com/sounakmaiti123" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sounak-maiti-b85449288/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+
+      <p class="copyright">© 2026 All rights reserved</p>
+    </div>
+
+  </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
