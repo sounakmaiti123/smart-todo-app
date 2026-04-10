@@ -398,3 +398,377 @@ button {
 .social-icons a:hover i {
   text-shadow: 0 0 10px orange;
 }
+/* HEATMAP */
+#heatmap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.day-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: #1e293b;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.day-box.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* levels */
+.level-1 { background: #16a34a; }
+.level-2 { background: #22c55e; }
+.level-3 { background: #4ade80; }
+.level-4 { background: #86efac; }
+
+/* STREAK */
+.streak-box {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#streakGrid {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.day {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: #1e293b;
+}
+
+.day.active {
+  background: #facc15;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #1e293b;
+  border-radius: 10px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #facc15;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+#heatmap {
+  display: grid;
+  grid-template-columns: repeat(53, 12px);
+  grid-auto-flow: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.day-box {
+  width: 12px;
+  height: 12px;
+  background: #1e293b;
+  border-radius: 3px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.3s;
+}
+
+.day-box.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.level-1 { background: #16a34a; }
+.level-2 { background: #22c55e; }
+.level-3 { background: #4ade80; }
+#streakGrid {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.day {
+  width: 14px;
+  height: 14px;
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+.day.active {
+  background: #facc15;
+}
+/* HEATMAP */
+#heatmap {
+  padding: 20px;
+}
+
+.month-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #9aa4b2;
+  font-size: 12px;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(52, 1fr);
+  gap: 4px;
+}
+
+.cell {
+  width: 12px;
+  height: 12px;
+  background: #1f2a44;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.cell.active {
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+}
+.streak-box {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#streakGrid {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.day {
+  width: 14px;
+  height: 14px;
+  background: #1f2a44;
+  border-radius: 3px;
+}
+
+.day.active {
+  background: #facc15;
+  box-shadow: 0 0 6px #facc15;
+}
+.fade-out {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: 0.3s ease;
+}
+.cell {
+  width: 14px;
+  height: 14px;
+  background: #1f2a44;
+  border-radius: 3px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.3s;
+}
+
+/* ================= HEATMAP FINAL ================= */
+
+#heatmap {
+  padding: 20px;
+}
+
+/* WRAPPER */
+.heatmap-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* MONTH LABELS */
+.month-labels {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #9aa4b2;
+  text-align: center;
+}
+
+/* GRID */
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(52, 14px);
+  justify-content: center;
+  gap: 4px;
+}
+
+/* CELLS */
+.cell {
+  width: 14px;
+  height: 14px;
+  background: #1f2a44;
+  border-radius: 3px;
+}
+
+/* ACTIVE */
+.cell.active {
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+}
+/* 🔥 STREAK GRID FIX */
+.streak-grid {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+/* EACH DAY BOX */
+.streak-grid .day {
+  width: 16px;
+  height: 16px;
+  background: #1f2a44;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+/* ACTIVE DAY */
+.streak-grid .day.active {
+  background: #facc15;
+  box-shadow: 0 0 8px #facc15;
+}
+/* WRAPPER */
+.heatmap-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* MONTH LABELS */
+.month-labels {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #9aa4b2;
+  text-align: center;
+}
+
+/* GRID */
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(52, 14px);
+  justify-content: center;
+  gap: 4px;
+}
+
+/* BASE CELL */
+.cell {
+  width: 14px;
+  height: 14px;
+  background: #1f2a44;
+  border-radius: 3px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.3s ease;
+}
+
+/* SHOW ANIMATION */
+.cell.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 🔥 GITHUB COLORS */
+.level-1 { background: #22c55e; }
+.level-2 { background: #16a34a; }
+.level-3 { background: #15803d; }
+
+/* HOVER */
+.cell:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px #22c55e;
+}
+/* ================= GITHUB HEATMAP FINAL ================= */
+
+.heatmap-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* LEFT DAY LABELS */
+.heatmap-days {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #9aa4b2;
+  padding-top: 25px;
+}
+
+/* RIGHT SIDE */
+.heatmap-main {
+  flex: 1;
+}
+
+/* MONTH LABELS */
+.month-labels {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #9aa4b2;
+}
+
+/* 🔥 MAIN GRID FIX */
+/* 🔥 FORCE GRID FIX */
+.heatmap-grid {
+  display: grid;
+  grid-auto-flow: column;   /* 🔥 VERY IMPORTANT */
+  grid-template-rows: repeat(7, 14px);
+  gap: 4px;
+}
+
+/* CELLS */
+.cell {
+  width: 14px;
+  height: 14px;
+  background: #1f2a44;
+  border-radius: 3px;
+  display: block;
+}
+
+/* GITHUB COLORS */
+.l0 { background: #161b22 !important; }
+.l1 { background: #0e4429 !important; }
+.l2 { background: #006d32 !important; }
+.l3 { background: #26a641 !important; }
+.l4 { background: #39d353 !important; }
+
+/* FOOTER */
+.heatmap-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #9aa4b2;
+}
+
+/* LEGEND */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend .box {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}

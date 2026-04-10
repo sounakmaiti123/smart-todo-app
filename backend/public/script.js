@@ -64,9 +64,11 @@ async function getTasks() {
   // ✅ Get tasks
   const res = await fetch(`/tasks?email=${user.email}`);
   const tasks = await res.json();
-
+  renderHeatmap(tasks);
+  
   const list = document.getElementById("taskList");
   list.innerHTML = "";
+
 
   let completedTasks = 0;
   let totalDays = 0;
@@ -89,23 +91,30 @@ async function getTasks() {
     }
 
     div.innerHTML = `
-      <div class="task-left">
-        <h4>${task.title}</h4>
-        <p>${task.progressDays}/${task.plannedDays} days</p>
-      </div>
+<div class="task-left">
+  <h4>${task.title}</h4>
+  <p>${task.progressDays}/${task.plannedDays} days</p>
 
-      <div class="task-right">
-        <span class="task-accuracy">
-          ${taskAccuracy.toFixed(0)}%
-        </span>
+  <!-- 🔥 PROGRESS BAR -->
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: ${taskAccuracy}%"></div>
+  </div>
+</div>
 
-        ${
-          !task.started
-            ? `<button onclick="startTask('${task._id}')">▶ Start</button>`
-            : `<button onclick="markDayComplete('${task._id}')">✔ Day Done</button>`
-        }
-      </div>
-    `;
+<div class="task-right">
+  <span class="task-accuracy">
+    ${taskAccuracy.toFixed(0)}%
+  </span>
+
+  ${
+    !task.started
+      ? `<button onclick="startTask('${task._id}')">▶ Start</button>`
+      : task.progressDays < task.plannedDays
+        ? `<button onclick="markDayComplete('${task._id}')">✔ Day Done</button>`
+        : `<button onclick="deleteTask('${task._id}', this)" class="delete-btn">🗑 Delete</button>`
+  }
+</div>
+`;
 
     list.appendChild(div);
   });
@@ -258,4 +267,102 @@ async function markDayComplete(id) {
   });
 
   getTasks();
+}
+
+function updateStreak(tasks) {
+  const grid = document.getElementById("streakGrid");
+  const text = document.getElementById("streakCount");
+
+  if (!grid) return;
+
+  grid.innerHTML = "";
+
+  let streak = 0;
+
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date();
+    date.setDate(date.getDate() - i);
+
+    const dayStr = date.toISOString().split("T")[0];
+
+    const didWork = tasks.some(task =>
+      (task.completedDates || []).includes(dayStr)
+    );
+
+    const div = document.createElement("div");
+    div.className = "day";
+
+    if (didWork) {
+      div.classList.add("active");
+      streak++;
+    }
+
+    grid.appendChild(div);
+  }
+
+  text.innerText = `${streak} Day Streak 🔥`;
+}
+function renderHeatmap(tasks) {
+  const grid = document.getElementById("heatmap");
+  const monthLabels = document.getElementById("monthLabels");
+
+  if (!grid) return;
+
+  grid.innerHTML = "";
+  monthLabels.innerHTML = "";
+
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  // Month labels
+  months.forEach(m => {
+    const span = document.createElement("span");
+    span.innerText = m;
+    monthLabels.appendChild(span);
+  });
+
+  const today = new Date();
+  const startDate = new Date();
+  startDate.setDate(today.getDate() - 364);
+
+  // 🔥 Count contributions
+  const dateCount = {};
+
+  tasks.forEach(task => {
+    (task.completedDates || []).forEach(date => {
+      dateCount[date] = (dateCount[date] || 0) + 1;
+    });
+  });
+
+  // 🔥 FIXED LOOP (IMPORTANT)
+  for (let i = 0; i < 365; i++) {
+    const date = new Date(startDate);
+    date.setDate(startDate.getDate() + i);
+
+    const dateStr = date.toISOString().split("T")[0];
+    const count = dateCount[dateStr] || 0;
+
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    cell.style.border = "1px solid red";
+
+    // intensity levels
+    if (count === 0) cell.classList.add("l0");
+    else if (count === 1) cell.classList.add("l1");
+    else if (count === 2) cell.classList.add("l2");
+    else if (count === 3) cell.classList.add("l3");
+    else cell.classList.add("l4");
+
+    // tooltip
+    cell.title = `${dateStr} → ${count} contributions`;
+
+    grid.appendChild(cell);
+  }
+}
+async function deleteTask(id, element) {
+  element.classList.add("fade-out");
+
+  setTimeout(async () => {
+    await fetch(`/task/${id}`, { method: "DELETE" });
+    getTasks();
+  }, 300);
 }

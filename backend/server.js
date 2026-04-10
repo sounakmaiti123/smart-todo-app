@@ -131,10 +131,26 @@ app.put("/task/:id/progress", async (req, res) => {
 
   if (task.progressDays < task.plannedDays) {
     task.progressDays += 1;
+
+    // 🔥 ADD THIS (VERY IMPORTANT)
+    const today = new Date().toISOString().split("T")[0];
+
+    if (!task.completedDates) {
+      task.completedDates = [];
+    }
+
+    if (!task.completedDates.includes(today)) {
+      task.completedDates.push(today);
+    }
+
     await task.save();
   }
 
   res.json(task);
+});
+app.delete("/task/:id", async (req, res) => {
+  await Task.findByIdAndDelete(req.params.id);
+  res.json({ success: true });
 });
 // ================= SERVER ================= //
 
