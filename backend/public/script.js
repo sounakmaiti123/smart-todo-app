@@ -333,30 +333,37 @@ function renderHeatmap(tasks) {
     });
   });
 
-  // 🔥 FIXED LOOP (IMPORTANT)
-  for (let i = 0; i < 365; i++) {
-    const date = new Date(startDate);
-    date.setDate(startDate.getDate() + i);
+  
+  // 🔥 FINAL WORKING LOOP
+for (let i = 0; i < 365; i++) {
+  const date = new Date(startDate);
+  date.setDate(startDate.getDate() + i);
 
-    const dateStr = date.toISOString().split("T")[0];
-    const count = dateCount[dateStr] || 0;
+  const dateStr = date.toISOString().split("T")[0];
+  const count = dateCount[dateStr] || 0;
 
-    const cell = document.createElement("div");
-    cell.className = "cell";
-    cell.style.border = "1px solid red";
+  const cell = document.createElement("div");
+  cell.classList.add("cell");
 
-    // intensity levels
-    if (count === 0) cell.classList.add("l0");
-    else if (count === 1) cell.classList.add("l1");
-    else if (count === 2) cell.classList.add("l2");
-    else if (count === 3) cell.classList.add("l3");
-    else cell.classList.add("l4");
+  // ❌ REMOVE ALL INLINE STYLES
+  // cell.style.border = "1px solid red";
+  // cell.style.background = "red";
 
-    // tooltip
-    cell.title = `${dateStr} → ${count} contributions`;
+  // ✅ USE CSS CLASSES ONLY
+  if (count === 0) cell.classList.add("l0");
+  else if (count === 1) cell.classList.add("l1");
+  else if (count === 2) cell.classList.add("l2");
+  else if (count === 3) cell.classList.add("l3");
+  else cell.classList.add("l4");
 
-    grid.appendChild(cell);
-  }
+  // ✅ MAKE VISIBLE (VERY IMPORTANT 🔥)
+  cell.classList.add("show");
+
+  // tooltip
+  cell.title = `${dateStr} → ${count} contributions`;
+
+  grid.appendChild(cell);
+}
 }
 async function deleteTask(id, element) {
   element.classList.add("fade-out");
@@ -366,3 +373,6 @@ async function deleteTask(id, element) {
     getTasks();
   }, 300);
 }
+document.addEventListener("DOMContentLoaded", () => {
+  getTasks();
+});

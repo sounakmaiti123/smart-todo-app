@@ -27,36 +27,96 @@
 
  <!-- 🔐 LOGIN MODAL -->
 <div id="loginModal" class="modal">
-  <div class="modal-content">
+ <div class="auth-container">
+
+  <!-- LEFT -->
+  <div class="auth-left">
+    <h1>TaskFlow</h1>
+    <p class="tagline">Track. Improve. Achieve.</p>
+
+    <h2>
+      <span>Stay Consistent</span><br>
+      Build Your Streak 🚀
+    </h2>
+
+    <p class="auth-switch-text">
+      Don't have an account?
+      <span onclick="switchToSignup()">Sign Up</span>
+    </p>
+
+    <div class="social-icons">
+  <a href="https://github.com/sounakmaiti123" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/sounak-maiti-b85449288/" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://twitter.com/your-handle" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+</div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="auth-right">
     <h2>Login</h2>
 
     <input id="loginEmail" placeholder="Email">
     <input id="loginPassword" type="password" placeholder="Password">
 
     <button onclick="login()">Login</button>
-
-    <p class="switch">
-      Don't have an account?
-      <span onclick="switchToSignup()">Sign Up</span>
-    </p>
   </div>
+
+</div>
 </div>
 
 <!-- 🆕 SIGNUP MODAL -->
 <div id="signupModal" class="modal">
-  <div class="modal-content">
+  <div class="auth-container">
+
+  <!-- LEFT -->
+  <div class="auth-left">
+    <h1>TaskFlow</h1>
+    <p class="tagline">Track. Improve. Achieve.</p>
+
+    <h2>
+      <span>Join TaskFlow</span><br>
+      Start Your Journey 🚀
+    </h2>
+
+    <p class="auth-switch-text">
+      Already have an account?
+      <span onclick="switchToLogin()">Login</span>
+    </p>
+
+   <div class="social-icons">
+  <a href="https://github.com/sounakmaiti123" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/sounak-maiti-b85449288/" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://twitter.com/your-handle" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+</div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="auth-right">
     <h2>Sign Up</h2>
 
     <input id="signupEmail" placeholder="Email">
     <input id="signupPassword" type="password" placeholder="Password">
 
     <button onclick="signup()">Create Account</button>
-
-    <p class="switch">
-      Already have an account?
-      <span onclick="switchToLogin()">Login</span>
-    </p>
   </div>
+
+</div>
 </div>
 
   <!-- 📊 CARDS -->
@@ -146,14 +206,19 @@
       <p class="tagline">Track. Improve. Achieve.</p>
 
       <!-- 🔥 SOCIAL ICONS -->
-      <div class="social-icons">
-        <a href="https://github.com/sounakmaiti123" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/sounak-maiti-b85449288/" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
+         <div class="social-icons">
+  <a href="https://github.com/sounakmaiti123" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/sounak-maiti-b85449288/" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://twitter.com/your-handle" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+</div>
 
       <p class="copyright">© 2026 All rights reserved</p>
     </div>
