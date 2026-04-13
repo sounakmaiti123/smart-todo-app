@@ -67,14 +67,18 @@
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="assets/dashboard.png" width="45%"/>
-  <img src="assets/heatmap.png" width="45%"/>
+  <img src="assets/dashboard.png" width="80%" style="border-radius:12px;" />
 </p>
 
 <p align="center">
-  <img src="assets/login.png" width="45%"/>
-  <img src="assets/signup.png" width="45%"/>
+  <img src="assets/heatmap.png" width="80%" style="border-radius:12px;" />
 </p>
+
+<p align="center">
+  <img src="assets/login.png" width="45%" style="border-radius:12px; margin-right:10px;" />
+  <img src="assets/signup.png" width="45%" style="border-radius:12px;" />
+</p>
+
 
 ---
 
