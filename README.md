@@ -1,15 +1,20 @@
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f172a,100:f59e0b&height=120&section=header&text=TaskFlow&fontSize=40&fontColor=ffffff"/>
+</p>
 <h1 align="center">🚀 TaskFlow</h1>
 
 <p align="center">
   <b>Track • Improve • Achieve</b><br>
   Smart Productivity Tracker with GitHub-style Streak Visualization
 </p>
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?size=30&duration=3000&color=F59E0B&center=true&vCenter=true&width=600&lines=TaskFlow+Productivity+App;Track+Your+Daily+Streaks;Stay+Consistent+%F0%9F%9A%80" />
+</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge"/>
-  <img src="https://img.shields.io/github/stars/sounakmaiti123/smart-todo-app?style=for-the-badge"/>
-  <img src="https://img.shields.io/github/forks/sounakmaiti123/smart-todo-app?style=for-the-badge"/>
-  <img src="https://img.shields.io/github/issues/sounakmaiti123/smart-todo-app?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JS-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Database-MongoDB-darkgreen?style=for-the-badge"/>
 </p>
 
 ---
