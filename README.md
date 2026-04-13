@@ -1,8 +1,6 @@
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f172a,100:f59e0b&height=120&section=header&text=TaskFlow&fontSize=40&fontColor=ffffff"/>
 </p>
-<h1 align="center">🚀 TaskFlow</h1>
-
 <p align="center">
   <b>Track • Improve • Achieve</b><br>
   Smart Productivity Tracker with GitHub-style Streak Visualization
