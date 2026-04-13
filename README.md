@@ -1,17 +1,37 @@
 # 🚀 TaskFlow — Smart Productivity Tracker
 
-Track your daily tasks, maintain streaks, and visualize your productivity with a GitHub-style contribution heatmap.
+<p align="center">
+  <b>Track • Improve • Achieve</b><br>
+  A modern full-stack productivity app with GitHub-style streak tracking.
+</p>
 
 ---
 
-## 🌟 Features
+## 🏷️ Badges
 
-* ✅ Add & manage daily tasks
-* 📊 GitHub-style contribution heatmap
-* 🔥 Streak tracking system
-* 📈 Productivity analytics (tasks, completed, accuracy)
+![GitHub repo size](https://img.shields.io/github/repo-size/sounakmaiti123/smart-todo-app)
+![GitHub stars](https://img.shields.io/github/stars/sounakmaiti123/smart-todo-app?style=social)
+![GitHub forks](https://img.shields.io/github/forks/sounakmaiti123/smart-todo-app?style=social)
+![GitHub issues](https://img.shields.io/github/issues/sounakmaiti123/smart-todo-app)
+
+---
+
+## 📌 Overview
+
+**TaskFlow** is a full-stack productivity web application designed to help users manage daily tasks, track consistency, and visualize progress using a **GitHub-style contribution heatmap**.
+
+It focuses on building habits, maintaining streaks, and improving productivity through visual feedback.
+
+---
+
+## ✨ Features
+
+* ✅ Task management system
+* 🔥 GitHub-style streak heatmap
+* 📊 Daily productivity tracking
+* 🎯 Accuracy & completion metrics
 * 🔐 Authentication (Login / Signup UI)
-* 🎨 Modern dark UI with smooth animations
+* 🎨 Modern UI with animations
 
 ---
 
@@ -25,11 +45,11 @@ Track your daily tasks, maintain streaks, and visualize your productivity with a
 
 ![Heatmap](assets/heatmap.png)
 
-### 🔐 Login Page
+### 🔐 Login UI
 
 ![Login](assets/login.png)
 
-### 🆕 Signup Page
+### 🆕 Signup UI
 
 ![Signup](assets/signup.png)
 
@@ -41,7 +61,7 @@ Track your daily tasks, maintain streaks, and visualize your productivity with a
 
 * HTML5
 * CSS3 (Modern UI + Animations)
-* JavaScript (Vanilla JS)
+* JavaScript
 
 ### ⚙️ Backend
 
@@ -81,9 +101,9 @@ smart-todo-app/
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation
 
-### 1️⃣ Clone the repo
+### 1️⃣ Clone the repository
 
 ```
 git clone https://github.com/sounakmaiti123/smart-todo-app.git
@@ -99,14 +119,14 @@ npm install
 
 ### 3️⃣ Setup environment variables
 
-Create `.env` file:
+Create a `.env` file:
 
 ```
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=your_mongodb_uri
 PORT=5000
 ```
 
-### 4️⃣ Run the app
+### 4️⃣ Run the application
 
 ```
 node server.js
@@ -116,16 +136,17 @@ node server.js
 
 ## 🌐 Usage
 
-* Open browser → `http://localhost:5000`
-* Add tasks → Track progress
-* View heatmap → Monitor streaks
+* Open: `http://localhost:5000`
+* Add tasks
+* Track streaks
+* Monitor progress
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Future Enhancements
 
+* 📱 Mobile responsiveness
 * 🔔 Notifications & reminders
-* 📱 Mobile responsiveness improvements
 * ☁️ Deployment (Render / Vercel)
 * 📊 Advanced analytics
 
@@ -136,11 +157,10 @@ node server.js
 **Sounak Maiti**
 
 * GitHub: https://github.com/sounakmaiti123
-* LinkedIn: (add your link)
 
 ---
 
-## ⭐ Show Your Support
+## ⭐ Support
 
 If you like this project:
 
@@ -152,4 +172,4 @@ If you like this project:
 
 ## 💡 Inspiration
 
-Inspired by GitHub contribution graph & modern productivity tools.
+Inspired by GitHub contribution graph and modern productivity tools.
