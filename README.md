@@ -28,6 +28,12 @@
   🔊 Click the image to watch the demo
 </p>
 
+<p align="center">
+  <a href="https://smart-todo-app-psi-nine.vercel.app/">
+    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Click%20Here-blue?style=for-the-badge" />
+  </a>
+</p>
+
 
 ---
 
