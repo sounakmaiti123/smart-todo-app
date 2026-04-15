@@ -244,17 +244,6 @@ async function startTask(id) {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      startTime: new Date()
-    })
-  });
-
-  alert("Task Started 🚀");
-}
-async function startTask(id) {
-  await fetch(`/task/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
       started: true
     })
   });

@@ -97,12 +97,12 @@ app.get("/tasks", async (req, res) => {
 // Update Task
 app.put("/task/:id", async (req, res) => {
   try {
-    const task = await Task.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
-    res.json(task);
+    const { id } = req.params;
+    const updateData = req.body;
+
+    await Task.findByIdAndUpdate(id, updateData);
+
+    res.json({ success: true });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
