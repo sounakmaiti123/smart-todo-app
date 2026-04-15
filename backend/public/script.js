@@ -1,4 +1,4 @@
-const API = "http://localhost:5000";
+const API = "https://smart-todo-app-8g00.onrender.com";
 
 window.onload = () => {
   setDate();
@@ -41,7 +41,7 @@ async function addTask() {
 
   if (!title || !plannedDays) return alert("Enter all fields");
 
-  await fetch("/add-task", {
+  await fetch(`${API}/add-task`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -62,7 +62,7 @@ async function getTasks() {
   if (!user) return;
 
   // ✅ Get tasks
-  const res = await fetch(`/tasks?email=${user.email}`);
+  const res = await fetch(`${API}/tasks?email=${user.email}`);
   const tasks = await res.json();
   renderHeatmap(tasks);
   
@@ -181,7 +181,7 @@ async function signup() {
   const email = document.getElementById("signupEmail").value;
   const password = document.getElementById("signupPassword").value;
 
-  const res = await fetch("/signup", {
+  const res = await fetch(`${API}/signup`, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ email, password })
@@ -204,7 +204,7 @@ async function login() {
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
 
-  const res = await fetch("/login", {
+  const res = await fetch(`${API}/login`, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ email, password })
@@ -240,7 +240,7 @@ function closeModals() {
   document.getElementById("signupModal").style.display = "none";
 }
 async function startTask(id) {
-  await fetch(`/task/${id}`, {
+  await fetch(`${API}/task/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -262,7 +262,7 @@ async function startTask(id) {
   getTasks();
 }
 async function markDayComplete(id) {
-  await fetch(`/task/${id}/progress`, {
+  await fetch(`${API}/task/${id}/progress`, {
     method: "PUT"
   });
 
@@ -369,7 +369,7 @@ async function deleteTask(id, element) {
   element.classList.add("fade-out");
 
   setTimeout(async () => {
-    await fetch(`/task/${id}`, { method: "DELETE" });
+    await fetch(`${API}/task/${id}`, { method: "DELETE" });
     getTasks();
   }, 300);
 }
